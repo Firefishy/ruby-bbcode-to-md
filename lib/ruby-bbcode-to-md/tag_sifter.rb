@@ -19,8 +19,8 @@ module RubyBBCode
 
 
     def process_text
-      regex_string = '((\[ (\/)? ([\w\.…]+) ((=[^\[\]]+) | (\s\w+=\w+)* | ([^\]]*))? \]) | ([^\[]+))'
-      @text.scan(/#{regex_string}/ix) do |tag_info|
+      regex_string = '\G((\[ (\/)? (\w+) ((=[^\[\]]+) | (\s\w+=\w+)* | ([^\]]*))? \]) | (.[^\[]*))'
+      @text.scan(/#{regex_string}/mix) do |tag_info|
         @ti = TagInfo.new(tag_info, @dictionary)
 
         @ti.handle_unregistered_tags_as_text  # if the tag isn't in the @dictionary list, then treat it as text

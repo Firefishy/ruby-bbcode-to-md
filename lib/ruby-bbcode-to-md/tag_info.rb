@@ -111,7 +111,7 @@ module RubyBBCode
     def find_tag_info(tag_info)
       ti = {}
       ti[:complete_match] = tag_info[0]
-      ti[:is_tag] = (tag_info[0].start_with? '[')
+      ti[:is_tag] = !tag_info[1].nil?
       if ti[:is_tag]
         ti[:closing_tag] = (tag_info[2] == '/')
         ti[:tag] = tag_info[3]
