@@ -222,4 +222,10 @@ class RubyBbcodeTest < MiniTest::Unit::TestCase
     assert_equal "[**Google**](http://google.com)", "[url=http://google.com][color=#008000][b]Google[/b][/color][/url]".bbcode_to_md
   end
 
+  def test_ellipsis
+    assert_equal "[...]", "[...]".bbcode_to_md
+    assert_equal "[…]", "[…]".bbcode_to_md
+    assert_equal "aaa [...] bbb", "aaa [...] bbb".bbcode_to_md
+  end
+
 end
