@@ -69,6 +69,7 @@ class RubyBbcodeTest < MiniTest::Unit::TestCase
     assert_equal "\n```\n[b]test[/b]\n```\n", "[code][b]test[/b][/code]".bbcode_to_md
     assert_equal "\n```\n[b]test\n```\n", "[code][b]test[/code]".bbcode_to_md
     assert_equal "\n```\n[b]test\n<i>\n```\n", "[code][b]test\n<i>[/code]".bbcode_to_md(false)
+    assert_equal "\n```\nline1\n\nline2\n```\n", "[code]line1\n\nline2[/code]".bbcode_to_md(false)
   end
 
   def test_quote
