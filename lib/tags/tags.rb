@@ -25,6 +25,7 @@ module RubyBBCode
         :description => 'Code block',
         :example => '[code]code[/code].',
         :only_allow => [],
+        :paragraphs => false,
         :plain_tag => true},
       :center => {
         :html_open => '', :html_close => '',
